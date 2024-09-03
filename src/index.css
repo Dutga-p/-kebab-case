@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body, 
 #root{
@@ -11,10 +15,4 @@ body,
 
 canvas{
   touch-action: none;
-}
-
-.title{
-  position:absolute;
-  z-index: 1;
-  color: white;
 }

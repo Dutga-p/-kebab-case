@@ -9,7 +9,7 @@ const World = () => {
   }
   return (
     <>
-    <h1 className="title">Hola</h1>
+    <h1 className=" z-10 absolute text-green-500">Hola</h1>
     <Canvas camera={cameraSettings}>
       <OrbitControls/>
       <ambientLight intensity={3.5}/>
