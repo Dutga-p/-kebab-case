@@ -2,8 +2,7 @@
 import { Canvas } from "@react-three/fiber";
 import { FirstPersonControls } from "@react-three/drei"; // Importa FirstPersonControls
 import useAuthStore from "./stores/use-auth-store";
-import House from "./House";
-import CosineBall from "./CosineBall";
+import Torus1 from "./Torus1";
 import { useNavigate } from "react-router-dom";
 
 const World = () => {
@@ -40,7 +39,7 @@ const World = () => {
         <FirstPersonControls /> {/* Usar FirstPersonControls en lugar de OrbitControls */}
         <ambientLight intensity={3.5} />
         <directionalLight position={[10, 10, 5]} intensity={1.0} color="white" castShadow/>
-        <CosineBall />
+        <Torus1 />
       </Canvas>
     </>
   );
