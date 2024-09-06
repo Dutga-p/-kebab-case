@@ -1,14 +1,18 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-// import World from './World';
-import Login from './pages/login/login.jsx';
+import { createRoot } from 'react-dom/client'// import World from './World';
+import Home from './pages/Home.jsx';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
+import World from './World.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Home />,
+  },
+  {
+    path: "/World",
+    element: <World />,
   },
 ]);
 

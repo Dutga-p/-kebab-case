@@ -4,7 +4,7 @@ import UserDAO from "../../daos/UserDAO";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { user, loginGoogleWithPopUp, logout, observeAuthState, loading } =
+  const { user, loginGoogleWithPopUp, observeAuthState, loading } =
     useAuthStore();
 
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Login = () => {
         photo: user.photoURL,
       };
       UserDAO.createUser(newUser);
-      navigate("/Quiz");
+      navigate("/World");
     }
   }, [user, navigate]);
 
@@ -29,9 +29,6 @@ const Login = () => {
     loginGoogleWithPopUp();
   }, [loginGoogleWithPopUp]);
 
-  const handleLogout = useCallback(() => {
-    logout();
-  }, [logout]);
 
   if (loading) {
     return <p className="loading-text">Cargando...</p>;
@@ -39,17 +36,9 @@ const Login = () => {
 
   return (
     <>
-    <div className="flex flex-col items-center justify-center h-screen bg-slate-300">
-      {user ? (
-        <>
-          <p className="text-[#030303] text-xl">Bienvenido, {user.displayName}</p>
-          <button className="text-base text-[#666]" onClick={handleLogout}>
-            Cerrar sesión
-          </button>
-        </>
-      ) : (
-        <button className="text-white border border-white p-2 rounded-md bg-gradient-to-tr from-blue-500 to-green-500" onClick={handleLogin}>Iniciar sesión</button>
-      )}
+    <div className="flex flex-col items-center justify-center bg-slate-300">
+      <button className="text-white border text-4xl border-white p-2 rounded-md bg-gradient-to-tr from-green-400 to-green-600 
+        transition transform hover:scale-110 hover:text-black hover:border-2 hover:border-black hover:from-green-600 hover:to-green-400 duration-300" onClick={handleLogin}>Iniciar sesión</button>
     </div>
     </>
   );
